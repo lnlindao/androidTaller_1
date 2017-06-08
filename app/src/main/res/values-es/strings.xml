@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mi Aplicación</string>
+    <string name="hello">Hola Mundo!</string>
+
+
+    <string name="on_create">Esto es onCreate.</string>
+
+    <string name="on_restart">Esto es onRestart.
+    </string>
+
+    <string name="on_start">Esto es onStart.
+    </string>
+
+    <string name="on_resume">
+      Esto es onResume.
+    </string>
+
+    <string name="on_pause">
+      Esto es onPause.
+    </string>
+
+    <string name="on_stop">
+      Esto es onStop.
+    </string>
+
+    <string name="on_destroy">
+      Esto es onDestroy.
+    </string>
+</resources>
