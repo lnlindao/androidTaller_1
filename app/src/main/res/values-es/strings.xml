@@ -11,7 +11,7 @@
 
     <string name="on_start">Esto es onStart.
     </string>
-
+    <string name="button_send">Envoar</string>
     <string name="on_resume">
       Esto es onResume.
     </string>
@@ -27,4 +27,9 @@
     <string name="on_destroy">
       Esto es onDestroy.
     </string>
+
+    <string name="nombre_usuario">Usuario</string>
+    <string name="clave">Clave</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

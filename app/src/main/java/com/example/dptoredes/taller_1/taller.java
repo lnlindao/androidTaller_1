@@ -1,8 +1,17 @@
 package com.example.dptoredes.taller_1;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.content.Intent;
+import android.view.View;
+import android.widget.EditText;
+
+import java.net.URI;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class taller extends AppCompatActivity {
 
@@ -77,5 +86,26 @@ public class taller extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d("ESto es en onDestroy","onDestroy");
+    }
+
+    public final static String EXTRA_MESSAGE = "dptoredes.MESSAGE";
+
+    /** Called when the user clicks the Send button */
+    public void abrirAcercaDe(View view) {
+        /* ABRIR VENTANA DE ACERCA DE */
+        /*Intent intent = new Intent(this, AcercaDeActivity.class);*/
+
+        /* ABRIR LLAMADAS Y PASO EL NÚMERO*/
+        /*Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:962849347"));*/
+
+        Intent intent = new Intent(this, AcercaDeActivity.class);
+        EditText editText = (EditText) findViewById(R.id.nombre_usuario);
+        EditText claveText = (EditText) findViewById(R.id.clave);
+        String message = editText.getText().toString();
+        String message1 = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra(EXTRA_MESSAGE, message1);
+        /*EJECUTAR E INTENT*/
+        startActivity(intent);
     }
 }
