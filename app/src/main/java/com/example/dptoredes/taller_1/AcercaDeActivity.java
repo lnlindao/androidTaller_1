@@ -7,22 +7,22 @@ import android.widget.TextView;
 
 public class AcercaDeActivity extends AppCompatActivity {
 
+    TextView parametro;
+
     /*http://desarrollador-android.com/desarrollo/formacion/empezar-formacion/crear-tu-primera-app/iniciar-otra-actividad/*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         /*setContentView(R.layout.activity_acerca_de);*/
 
-        // Get the message from the intent
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(taller.EXTRA_MESSAGE);
 
-        // Create the text view
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message);
+        setContentView(R.layout.activity_acerca_de);
+        parametro = (TextView) findViewById( R.id.parametro);
 
-        // Set the text view as the activity layout
-        setContentView(textView);
+        Intent intent=getIntent();
+        String message = intent.getStringExtra("nombre_usuario");
+        String message2 = intent.getStringExtra("clave");
+        parametro.setText("Nombre usuario: "+message+"        Clave: "+message2);
+
     }
 }

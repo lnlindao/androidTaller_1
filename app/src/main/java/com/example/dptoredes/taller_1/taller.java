@@ -1,24 +1,23 @@
 package com.example.dptoredes.taller_1;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 
-import java.net.URI;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
-
 public class taller extends AppCompatActivity {
+
+    EditText nombre_usuario, clave;
+    public final static String EXTRA_MESSAGE = "dpt.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taller);
+        clave = (EditText)findViewById(R.id.clave);
+        nombre_usuario = (EditText)findViewById(R.id.nombre_usuario);
     }
 
     /**
@@ -88,7 +87,7 @@ public class taller extends AppCompatActivity {
         Log.d("ESto es en onDestroy","onDestroy");
     }
 
-    public final static String EXTRA_MESSAGE = "dptoredes.MESSAGE";
+
 
     /** Called when the user clicks the Send button */
     public void abrirAcercaDe(View view) {
@@ -98,14 +97,11 @@ public class taller extends AppCompatActivity {
         /* ABRIR LLAMADAS Y PASO EL NÚMERO*/
         /*Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:962849347"));*/
 
-        Intent intent = new Intent(this, AcercaDeActivity.class);
-        EditText editText = (EditText) findViewById(R.id.nombre_usuario);
-        EditText claveText = (EditText) findViewById(R.id.clave);
-        String message = editText.getText().toString();
-        String message1 = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        intent.putExtra(EXTRA_MESSAGE, message1);
-        /*EJECUTAR E INTENT*/
+        Intent intent = new Intent(this, AcercaDeActivity.class );
+        String password =clave.getText().toString();
+        String usuario =nombre_usuario.getText().toString();
+        intent.putExtra("nombre_usuario",usuario);
+        intent.putExtra("clave",password);
         startActivity(intent);
     }
 }
